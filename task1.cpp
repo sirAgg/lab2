@@ -13,9 +13,22 @@ bool is_sorted(const int arr[], int size)
 
 int main(void)
 {
-    int arr[] = {1,3,4,2,7,9};
+    int inp; 
+    std::cout << "Enter array length: ";
+    std::cin >> inp;
 
-    std::cout << is_sorted(arr,6) << std::endl;
+    int a[inp];
+
+    for (int i = 0; i < inp; ++i)
+    {
+        std::cout << "Enter element: ";
+        std::cin >> a[i];
+    }
+
+    if (is_sorted(a,inp))
+        std::cout << "Array is sorted!" << std::endl;
+    else
+        std::cout << "Array is not sorted!" << std::endl;
     
     return 0;
 }

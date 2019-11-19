@@ -1,6 +1,6 @@
 #include <iostream>
 
-void array_rows_cols(const int (*arr)[], int row_size, int column_size)
+void array_rows_cols(const int *arr, int row_size, int column_size)
 {
     int column_sum[row_size];
 
@@ -29,7 +29,7 @@ int main(void)
 {
     int arr[8][8];
 
-    array_rows_cols(arr,8,8);
+    array_rows_cols((int*)&arr,8,8);
 
     return 0;
 }

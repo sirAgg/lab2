@@ -8,7 +8,7 @@ bool is_palindrome(const char word[])
     for( tail = 0; word[tail] != '\0'; tail++);
     tail--;
 
-    while(head > tail)
+    while(head <= tail)
     {
         if(word[head] != word[tail])
             return false;        
@@ -22,8 +22,11 @@ bool is_palindrome(const char word[])
 
 int main(void)
 {
+    char inp[100];
+    
+    scanf("%100s",inp);
 
-    std::cout << is_palindrome("madam") << std::endl;
+    printf("word is%s palindrome\n", (is_palindrome(inp) ? "" : " not"));
     
     return 0;
 }
