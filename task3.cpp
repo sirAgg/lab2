@@ -4,9 +4,7 @@
 
 void array_rows_cols(const int *arr, int row_size, int column_size)
 {
-	int *column_sum = new int[row_size];
-
-	for (int i = 0; i < row_size; i++) column_sum[i] = 0;	// Need to fill with zeros on Windows ?
+	int *column_sum = new int[row_size]();
 
     for(int r=0; r<row_size; r++)
     {
