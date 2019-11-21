@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 void shrink_array(int arr[], unsigned int size)
 {
@@ -28,6 +29,7 @@ void print_array(int arr[], int size)
 
 int main(void)
 {
+	srand(time(NULL)); // set seed for rand
     const int arr_size = 9;
     int a[arr_size];
 
@@ -42,4 +44,4 @@ int main(void)
     print_array(a,arr_size);
 
     return 0;
-}
+} 
