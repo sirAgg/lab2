@@ -1,0 +1,21 @@
+What i learnt:
+
+That createing an array with non const size on the stack is not
+in the c++ standard.
+
+
+What was difficult:
+
+I didn't really think any of it was particularry hard, but I already have som 
+experience with c++ so don't take my word for it.
+
+
+How can the lab be improved:
+
+A lot clearer instructions.
+For example task3. Where we are given a tip to on how to pass arrays as paramters,
+but it only works with static size, while the instruction says the array size shoud 
+be taken dynamicly from the user.
+
+I think I've spent around 6-8 hours on this lab
+  
