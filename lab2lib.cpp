@@ -83,7 +83,7 @@ void run_task2()
 
 void array_rows_cols(const int *arr, int row_size, int column_size)
 {
-    int *column_sum = new int[row_size];
+    int *column_sum = new int[row_size]();
 
     for(int r=0; r<row_size; r++)
     {
