@@ -6,6 +6,8 @@ void array_rows_cols(const int *arr, int row_size, int column_size)
 {
 	int *column_sum = new int[row_size]();
 
+    int tot_sum = 0;
+
     for(int r=0; r<row_size; r++)
     {
         int row_sum = 0;
@@ -16,6 +18,8 @@ void array_rows_cols(const int *arr, int row_size, int column_size)
             column_sum[c] += *(arr+c+r*column_size);
         }
         printf(" | %7.d\n", row_sum);
+
+        tot_sum += row_sum;
     }
 
 	// print separating line
@@ -24,7 +28,6 @@ void array_rows_cols(const int *arr, int row_size, int column_size)
 		std::cout << '-';
 	std::cout << '\n';
 
-    int tot_sum = 0;
     for(int c=0; c<column_size; c++)
     {
         printf("%7.d", column_sum[c]); 
