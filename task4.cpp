@@ -1,34 +1,33 @@
 #include <iostream>
 
-void swap_sign(int& a, int& b, int& c)
+bool greater_than(int& a, int& b)
 {
-    a *= -1; 
-    b *= -1; 
-    c *= -1; 
+    return a > b;
 }
 
-void swap_sort(int& a, int& b)
+bool less_than(int& a, int& b)
 {
-    // sorts a and b so that a <= b
-    if( a > b )
+    return a < b;
+}
+
+void swap_sort(int& a, int& b, bool (*sort_func)(int&,int&))
+{
+    // swaps a and b if sort_func is true
+    if(sort_func(a,b))
     {
-        int t = a; 
-        a = b;
-        b = t;
+        a = b-a;
+        b -= a;
+        a += b;
     }
 }
 
 void swap_sort(int& a, int& b, int& c, bool acsending_order)
 {
-    if (!acsending_order)
-        swap_sign(a,b,c);
+    bool (*sort_func)(int&,int&) = acsending_order ? greater_than : less_than;
 
-    swap_sort(a,b); 
-    swap_sort(b,c); 
-    swap_sort(a,b); 
-    
-    if (!acsending_order)
-        swap_sign(a,b,c);
+    swap_sort(a,b,sort_func); 
+    swap_sort(b,c,sort_func); 
+    swap_sort(a,b,sort_func); 
 }
 
 #define askValue(v) std::cout << "Give value " #v ": "; std::cin >> v;

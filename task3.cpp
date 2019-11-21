@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cstdlib>
 
 void array_rows_cols(const int *arr, int row_size, int column_size)
 {
-    int column_sum[row_size];
+    int *column_sum = new int[row_size];
 
     for(int r=0; r<row_size; r++)
     {
@@ -27,9 +28,20 @@ void array_rows_cols(const int *arr, int row_size, int column_size)
 
 int main(void)
 {
-    int arr[8][8];
 
-    array_rows_cols((int*)&arr,8,8);
+    int row, col;
+
+    std::cout << "Number of rows: ";
+    std::cin >> row;
+    std::cout << "Number of columns: ";
+    std::cin >> col;
+
+    int *arr = new int[row*col];
+
+    for (int i = 0; i < row*col; ++i)
+        arr[i] = rand()%10;
+
+    array_rows_cols(arr,row,col);
 
     return 0;
 }

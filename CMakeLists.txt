@@ -17,3 +17,10 @@ add_executable(task5 task5.cpp)
 
 project(task6)
 add_executable(task6 task6.cpp)
+
+project(lab2lib)
+add_library(lab2lib lab2lib.cpp)
+
+project(task7)
+add_executable(task7 task7.cpp)
+target_link_libraries(task7 lab2lib)

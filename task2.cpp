@@ -24,6 +24,7 @@ int main(void)
 {
     char inp[100];
     
+    printf("Enter word: ");
     scanf("%100s",inp);
 
     printf("word is%s palindrome\n", (is_palindrome(inp) ? "" : " not"));
